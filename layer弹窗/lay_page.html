@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>开始使用layer</title>
+
+</head>
+<body>
+<button id="test1">我按！</button>
+<div id="TB_ajaxContent" style="width:530px;height:390px;display:none" >
+    <div class="collectBox clearit">
+        <form id="collectBoxForm" name="collectBoxForm" method="post" action="https://bgm.tv/subject/314297/interest/update?gh=f01d0438">
+            <input type="hidden" name="referer" value="subject">
+            <div class="collectType cell">
+                <label><input value="1" id="wish" name="interest" onclick="" type="radio" checked="checked"> 想玩</label>&nbsp;&nbsp;
+                <label><input value="2" id="collect" name="interest" onclick="" type="radio" checked="checked"> 玩过</label>&nbsp;&nbsp;
+                <label><input value="3" id="do" name="interest" onclick="" type="radio"> 在玩</label>&nbsp;&nbsp;
+                <label><input value="4" id="on_hold" name="interest" onclick="" type="radio"> 搁置</label>&nbsp;&nbsp;
+                <label><input value="5" id="dropped" name="interest" onclick="" type="radio"> 抛弃</label>&nbsp;&nbsp;
+            </div>
+
+            <div class="collectType cell">
+                <p>分数:</p>
+                <label><input value="1" id="value1" name="potato" onclick="" type="radio" > 1</label>&nbsp;&nbsp;
+                <label><input value="2" id="value2" name="potato" onclick="" type="radio" > 2</label>&nbsp;&nbsp;
+                <label><input value="3" id="value3" name="potato" onclick="" type="radio"> 3</label>&nbsp;&nbsp;
+                <label><input value="4" id="value4" name="potato" onclick="" type="radio"> 4</label>&nbsp;&nbsp;
+                <label><input value="5" id="value5" name="potato" onclick="" type="radio"> 5</label>&nbsp;&nbsp;
+                <label><input value="1" id="value6" name="potato" onclick="" type="radio" > 6</label>&nbsp;&nbsp;
+                <label><input value="2" id="value7" name="potato" onclick="" type="radio" > 7</label>&nbsp;&nbsp;
+                <label><input value="3" id="value8" name="potato" onclick="" type="radio"> 8</label>&nbsp;&nbsp;
+                <label><input value="4" id="value9" name="potato" onclick="" type="radio"> 9</label>&nbsp;&nbsp;
+                <label><input value="5" id="value10" name="potato" onclick="" type="radio"> 10</label>&nbsp;&nbsp;
+            </div>
+
+            <p class="cell">
+                <label for="tags">标签 (使用逗号隔开，至多10个):</label>
+            </p>
+            <input id="tags" class="inputtext" type="text" size="30" name="tags" value/>
+
+            <div class="cell">
+                <p class="tip">
+                    <label for="commit">吐槽（简评，最多200字）：</label>
+                </p>
+                <textarea name="commit" id="commit" cols="32" rows="3" class="quick"></textarea>
+            </div>
+            <div id="submitBtn" class="l1">
+                <input class="inputBtn" type="submit" name="update" value="保存"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script src="js/jquery.min.js"></script> <!-- 你必须先引入jQuery1.8或以上版本 -->
+<script src="js/layui/layer/layer.js"></script>
+
+<script>
+
+    //弹出一个页面层
+    $('#test1').on('click', function(){
+        layer.open({
+            type: 1,
+            title: '加入收藏',
+            maxmin: true,
+            shadeClose: true, //点击遮罩关闭层
+            area : ['800px' , '520px'],
+            content: $("#TB_ajaxContent")
+        });
+    });
+</script>
+
+</body>
+</html>
